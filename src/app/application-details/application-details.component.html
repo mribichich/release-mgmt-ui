@@ -1,3 +1,12 @@
+<div *ngIf="application">
 <p>
-  application-details works!
+  {{application.name}}
 </p>
+
+<ul>
+  <li *ngFor="let release of application.releases">
+    {{release.version}} / {{release.timestamp | date}}
+  </li>
+</ul>
+</div>
+

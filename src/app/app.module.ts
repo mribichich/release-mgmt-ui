@@ -23,10 +23,10 @@ import { ApplicationDetailsComponent } from './application-details/application-d
     HttpModule,
     RouterModule.forRoot([
       {
-  path: '',
-  redirectTo: '/dashboard',
-  pathMatch: 'full'
-},
+        path: '',
+        redirectTo: '/dashboard',
+        pathMatch: 'full'
+      },
       {
         path: 'dashboard',
         component: DashboardComponent
@@ -34,10 +34,11 @@ import { ApplicationDetailsComponent } from './application-details/application-d
       {
         path: 'applications',
         component: ApplicationsComponent
-      },{
-  path: 'applications/:id',
-  component: ApplicationDetailsComponent
-}
+      }, 
+      {
+        path: 'applications/:name',
+        component: ApplicationDetailsComponent
+      }
     ])
   ],
   providers: [ApplicationsService],

@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Location } from '@angular/common';
+
+import { Application } from '../entities';
+import { ApplicationsService } from '../services';
 
 @Component({
   selector: 'app-application-details',
@@ -6,10 +11,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./application-details.component.css']
 })
 export class ApplicationDetailsComponent implements OnInit {
+  application: Application;
 
-  constructor() { }
+  constructor(
+    private applicationsService: ApplicationsService,
+    private route: ActivatedRoute,
+    private location: Location
+  ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.route.params.forEach((params: Params) => {
+      let name = params['name'];
+      this.applicationsService.findById(name)
+        .then(data =>  this.application = data);
+    });
   }
 
+  goBack(): void {
+    this.location.back();
+  }
 }

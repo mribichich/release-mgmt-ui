@@ -16,7 +16,7 @@ applications;
   ) { }
 
   ngOnInit() {
-    this.applicationsService.getApplications()
+    this.applicationsService.find()
       .then(applications => this.applications = applications);
   }
 

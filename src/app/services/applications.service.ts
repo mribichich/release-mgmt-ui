@@ -10,7 +10,14 @@ export class ApplicationsService {
 
   constructor(private http: Http) { }
 
-  getApplications(): Promise<Application[]> {
+  findById(name: string): Promise<Application> {
+    return this.http.get(`http://localhost:8080/applications/${name}`)
+      .toPromise()
+      .then(response => response.json() as Application)
+      .catch(this.handleError);
+  }
+
+  find(): Promise<Application[]> {
     return this.http.get('http://localhost:8080/applications')
       .toPromise()
       .then(response => response.json() as Application[])
