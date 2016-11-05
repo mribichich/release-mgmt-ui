@@ -1,0 +1,9 @@
+<p>
+  applications works!
+</p>
+
+<ul >
+  <li *ngFor="let app of applications">
+   <a [routerLink]="['/applications', app.id]">{{app.name}}</a>
+  </li>
+</ul>
