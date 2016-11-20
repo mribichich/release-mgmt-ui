@@ -22,7 +22,7 @@ export class ApplicationDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.forEach((params: Params) => {
       let name = params['name'];
-      this.applicationsService.findById(name)
+      this.applicationsService.findByName(name)
         .then(data =>  this.application = data);
     });
   }

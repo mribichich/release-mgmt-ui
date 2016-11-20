@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
@@ -9,7 +9,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ApplicationsComponent } from './applications/applications.component';
 import { ApplicationsService } from './services/applications.service';
 import { ApplicationDetailsComponent } from './application-details/application-details.component';
-
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +42,7 @@ import { ApplicationDetailsComponent } from './application-details/application-d
     ])
   ],
   providers: [ApplicationsService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+    schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }

@@ -10,7 +10,7 @@ export class ApplicationsService {
 
   constructor(private http: Http) { }
 
-  findById(name: string): Promise<Application> {
+  findByName(name: string): Promise<Application> {
     return this.http.get(`http://localhost:8080/applications/${name}`)
       .toPromise()
       .then(response => response.json() as Application)
@@ -21,6 +21,24 @@ export class ApplicationsService {
     return this.http.get('http://localhost:8080/applications')
       .toPromise()
       .then(response => response.json() as Application[])
+      .catch(this.handleError);
+  }
+
+  create(application: Application): Promise<void> {
+    return this.http.post('http://localhost:8080/applications', application)
+      .toPromise()
+      .catch(this.handleError);
+  }
+
+  updateByName(application: Application): Promise<void> {
+    return this.http.put(`http://localhost:8080/applications/${application.name}`, application)
+      .toPromise()
+      .catch(this.handleError);
+  }
+
+  deleteByName(name: string): Promise<void> {
+    return this.http.delete(`http://localhost:8080/applications/${name}`)
+      .toPromise()
       .catch(this.handleError);
   }
 

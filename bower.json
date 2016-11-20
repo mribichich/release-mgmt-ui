@@ -1,0 +1,22 @@
+{
+  "name": "release-mgmt-ui",
+  "description": "",
+  "main": "",
+  "authors": [
+    "mribichich <guli4073@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/mribichich/release-mgmt-ui",
+  "moduleType": [
+    "es6"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {}
+}
