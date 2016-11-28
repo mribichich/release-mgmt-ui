@@ -9,13 +9,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ApplicationsComponent } from './applications/applications.component';
 import { ApplicationsService } from './services/applications.service';
 import { ApplicationDetailsComponent } from './application-details/application-details.component';
+import { ApplicationCreateComponent } from './application-create/application-create.component';
  
 @NgModule({
   declarations: [
     AppComponent,
     ApplicationsComponent,
     DashboardComponent,
-    ApplicationDetailsComponent
+    ApplicationDetailsComponent,
+    ApplicationCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +36,10 @@ import { ApplicationDetailsComponent } from './application-details/application-d
       {
         path: 'applications',
         component: ApplicationsComponent
+      },
+      {
+        path: 'applications/create',
+        component: ApplicationCreateComponent
       }, 
       {
         path: 'applications/:name',
