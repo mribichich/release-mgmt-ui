@@ -1,0 +1,12 @@
+.application-details {
+    &__view-card {
+        margin: 20px;
+        width: auto;
+        &__title {
+            flex-grow: 1;
+            &__text {
+                flex-grow: 1;
+            }
+        }
+    }
+}

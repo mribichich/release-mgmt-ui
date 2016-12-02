@@ -8,7 +8,7 @@ import { ApplicationsService } from '../services';
 @Component({
   selector: 'app-application-details',
   templateUrl: './application-details.component.html',
-  styleUrls: ['./application-details.component.css']
+  styleUrls: ['./application-details.component.scss']
 })
 export class ApplicationDetailsComponent implements OnInit {
   application: Application;
@@ -23,7 +23,7 @@ export class ApplicationDetailsComponent implements OnInit {
     this.route.params.forEach((params: Params) => {
       let name = params['name'];
       this.applicationsService.findByName(name)
-        .then(data =>  this.application = data);
+        .then(data => this.application = data);
     });
   }
 
