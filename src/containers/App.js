@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Route, Link, Switch } from 'react-router-dom'
+import { Route, Link, Switch } from 'react-router-dom';
+import AppBar from 'material-ui/AppBar';
 
 import ApplicationsContainer from './ApplicationsContainer'
 import ApplicationCreateContainer from './ApplicationCreateContainer'
@@ -8,9 +9,12 @@ import ApplicationDetailsContainer from './ApplicationDetailsContainer'
 
 const App = ({ style }) => (
   <div style={style}>
-    <div>
+    <AppBar
+      title="Release Management"
+    />
+    {/*<div>
       <h2>Release Management</h2>
-    </div>
+    </div>*/}
 
     <div>
       <ul>
