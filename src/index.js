@@ -1,8 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
-import './index.css';
+import { render } from 'react-dom';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import configureStore from './store/configureStore';
+import registerServiceWorker from './registerServiceWorker';
+import Root from './containers/Root';
+
+const store = configureStore();
+// const history = syncHistoryWithStore(browserHistory, store)
+
+injectTapEventPlugin();
+
+render(
+  <Root store={store} />, document.getElementById('root'))
+
 registerServiceWorker();
